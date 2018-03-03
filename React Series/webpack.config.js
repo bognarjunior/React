@@ -1,6 +1,7 @@
-var debug = process.env.NODE_ENV !== "production";
-var webpack = require('webpack');
-var path = require('path');
+const debug = process.env.NODE_ENV !== "production";
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const path = require('path');
 
 module.exports = {
     context: path.join(__dirname, "src"),
@@ -16,8 +17,7 @@ module.exports = {
             query: {
             presets: ['react', 'es2015', 'stage-0']
             }
-        }
-        ]
+        }]
     },
     
     output: {

@@ -25,27 +25,27 @@ class PlacarContainer extends React.Component {
     }
 
     render() {
+        const { partida, casa, visitante } = this.props;
+        const estilo = {float: "left", "marginRight": "20px"};
+
         return(
             <div>
-                <div style={{float: "left", "marginRight": "20px"}}>
+                <div style={estilo}>
                     <h3>Casa</h3>
                     <Time 
-                        nome={this.props.casa.nome} 
+                        nome={casa.nome} 
                         gols={this.state.gols_casa}
                         marcarGol={this.marcarGolCasa}
                         />
                 </div>
-                <div style={{float: "left", "marginRight": "20px"}}>
-                    <Partida 
-                        estadio={this.props.partida.estadio}
-                        data={this.props.partida.data}
-                        horario={this.props.partida.horario}
-                        />
+                <div style={estilo}>
+                    <Partida {...partida} />
+                    {this.props.clima}
                 </div>
-                <div style={{float: "left", "marginRight": "20px"}}>
+                <div style={estilo}>
                     <h3>Visitante</h3>
                     <Time 
-                        nome={this.props.visitante.nome} 
+                        nome={visitante.nome} 
                         gols={this.state.gols_visitante} 
                         marcarGol={this.marcarGolVisitante}
                         />
@@ -54,6 +54,14 @@ class PlacarContainer extends React.Component {
             </div>
         );
     }
+}
+
+PlacarContainer.propTypes = {
+    clima: React.PropTypes.string,
+}
+
+PlacarContainer.defaultProps = {
+    clima: "Ensolarado",
 }
 
 export default PlacarContainer;
