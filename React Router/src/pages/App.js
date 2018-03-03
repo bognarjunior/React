@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink} from 'react-router';
 
 class App extends Component{
     constructor(props){
@@ -11,9 +11,15 @@ class App extends Component{
             <div>
                 <nav className="navbar has-shadow">
                     <div className="navbar-brand"> 
-                        <a className="navbar-item is-tab" href="/" >Home</a>
-                        <Link className="navbar-item is-tab" to="/cursos" activeClassName="is-active">Cursos</Link>
-                        <Link className="navbar-item is-tab" to="/sobre" activeClassName="is-active">Sobre</Link>
+                        <IndexLink 
+                            className="navbar-item is-tab" to="/" 
+                            activeClassName="is-active">Home</IndexLink>
+                        <Link 
+                            className="navbar-item is-tab" to="/cursos" 
+                            activeClassName="is-active">Cursos</Link>
+                        <Link 
+                            className="navbar-item is-tab" to="/sobre" 
+                            activeClassName="is-active">Sobre</Link>
                     </div>
                 </nav>
                 <section className="section">
