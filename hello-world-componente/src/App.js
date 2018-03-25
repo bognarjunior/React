@@ -19,7 +19,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <input type="text" name="" id="" onChange={this.handlerChange}/>
+                <input type="text" onChange={this.handlerChange}/>
                 <Mensagem  message={this.state.message}/>
             </div>
         );
