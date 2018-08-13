@@ -106,7 +106,7 @@ class ListaCartao extends React.Component {
             return (
                 <div key={index} className="row">
                     {listaCartoes(grupo, self)}
-                </ div>
+                </div>
             );
         });
 
