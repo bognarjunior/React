@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoList from './todoList';
 
 export default function TodoApp() {
   const [text, setText] = useState('');
   const [items, setTodo] = useState([]);
+
+  
+  useEffect(() => {
+    changeTitle()
+  });
+
+  function changeTitle() {
+    document.title = `${text !== '' ? `Adicionando ${text} na lista` : ` Você tem ${items.length} tarefas na lista`}`;
+  }
 
   function handleChange(e) {
     setText(e.target.value);
