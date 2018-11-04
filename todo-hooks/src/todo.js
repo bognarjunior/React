@@ -5,13 +5,14 @@ export default function TodoApp() {
   const [text, setText] = useState('');
   const [items, setTodo] = useState([]);
 
-  
   useEffect(() => {
     changeTitle()
   });
 
   function changeTitle() {
-    document.title = `${text !== '' ? `Adicionando ${text} na lista` : ` Você tem ${items.length} tarefas na lista`}`;
+    document.title = `${text !== '' 
+      ? `Adicionando ${text} na lista` 
+      : ` Você tem ${items.length} tarefas na lista`}`;
   }
 
   function handleChange(e) {
@@ -58,7 +59,7 @@ export default function TodoApp() {
   return (
     <div>
       <div id="myDIV" className="header">
-        <h2 style={{margin: 5}}>Lista de tarefas</h2>
+        <h2>Lista de tarefas</h2>
         <form onSubmit={handleSubmit}>
           <input
             id="myInput"
